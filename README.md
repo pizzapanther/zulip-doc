@@ -20,7 +20,7 @@ Options:
                                   [env var: IGNORE_WEEKENDS; default: ignore-
                                   weekends]
   --config-file FILE              [env var: CONFIG_FILE; default:
-                                  /home/paul/.zuliprc]
+                                  /home/{username}/.zuliprc]
   --help                          Show this message and exit.
 ```
 

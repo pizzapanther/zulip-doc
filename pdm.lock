@@ -6,7 +6,7 @@ groups = ["default"]
 cross_platform = true
 static_urls = false
 lock_version = "4.3"
-content_hash = "sha256:a607bb2d50bf9d1406686f63443a4f8b7862e7b9a14435cfba73dd117fd0763b"
+content_hash = "sha256:adc112392cae1f3a846eb0c26bcf090d11971b0cdf05da58df8f6b47752e3622"
 
 [[package]]
 name = "certifi"
