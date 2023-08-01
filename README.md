@@ -6,6 +6,16 @@ A small script to check user presence in Zulip. If a user hasn't been around for
 
 `pipx install zulip-doc`
 
+Then setup your `.zuliprc` file:
+
+```
+[api]
+key=<API key from the web interface>
+email=<your email address>
+site=<your Zulip server's URI>
+```
+
+
 ## Usage
 
 ```
