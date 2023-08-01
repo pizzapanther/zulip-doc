@@ -17,6 +17,9 @@ license = {text = "MIT"}
 [project.scripts]
 zdoc = "zdoc.main:app"
 
+[project.urls]
+homepage = "https://github.com/pizzapanther/zulip-doc"
+
 [build-system]
 requires = ["pdm-backend"]
 build-backend = "pdm.backend"
