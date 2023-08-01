@@ -70,5 +70,8 @@ def main(
   else:
     print("No Idle Users")
 
+def app():
+  typer.run(main)
+
 if __name__ == "__main__":
   typer.run(main)
