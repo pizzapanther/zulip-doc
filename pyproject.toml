@@ -1,6 +1,6 @@
 [project]
 name = "zulip-doc"
-version = "0.2.0"
+dynamic = ["version"]
 description = "Zulip service that checks user presence for Duty of Care responsibilities for remote teams"
 authors = [
     {name = "Paul Bailey", email = "paul@neutron.studio"},
@@ -23,7 +23,10 @@ build-backend = "pdm.backend"
 
 [tool]
 [tool.pdm]
-version = {from = "nsync/__init__.py"}
+
+[tool.pdm.version]
+source = "file"
+path = "zdoc/__init__.py"
 
 [tool.pdm.scripts]
 _.env_file = ".env"

@@ -24,14 +24,13 @@ CONFIG_OPTION = typer.Option(
 )
 
 MAX_IDLE_OPTION = typer.Option(default= 24 * 60 * 60, envvar="MAX_IDLE")
-IGNORE_WEEKENDS_OPTION = typer.Option(True, envvar="IGNORE_WEEKENDS")
-
+IGNORE_WEEKENDS_OPTION = typer.Option(default=True, envvar="IGNORE_WEEKENDS")
 
 def main(
     send_to: List[int] = typer.Argument(None),
     max_idle: int = MAX_IDLE_OPTION,
     ignore_weekends: bool = IGNORE_WEEKENDS_OPTION,
-    config_file: Path = CONFIG_OPTION
+    config_file: Path = CONFIG_OPTION,
   ):
   client = zulip.Client(config_file=config_file)
 
@@ -59,13 +58,16 @@ def main(
   if idle_users:
     timeframe = humanize.naturaldelta(datetime.timedelta(seconds=max_idle))
     users = ", ".join(idle_users)
-    request = {
-      "type": "private",
-      "to": send_to,
-      "content": f"**The following user have been offline for more than {timeframe}:**\n{users}",
-    }
-    print(f"Sending Idle Users: {len(idle_users)}")
-    result = client.send_message(request)
+    msg = f"**The following user have been offline for more than {timeframe}:**\n{users}"
+    print(msg + "\n\n")
+    if send_to:
+      request = {
+        "type": "private",
+        "to": send_to,
+        "content": msg,
+      }
+      print(f"Sending Idle Users: {len(idle_users)}")
+      result = client.send_message(request)
 
   else:
     print("No Idle Users")
