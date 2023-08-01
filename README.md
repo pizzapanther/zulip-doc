@@ -25,3 +25,12 @@ Options:
 ```
 
 Example: `zdoc 12 22`
+
+
+## Cron Job Setup
+
+`crontab -e`
+
+Then add something like:
+
+`0 17 * * * /home/paul/.local/bin/zdoc --config-file /home/paul/.zuliprc 12 22`
