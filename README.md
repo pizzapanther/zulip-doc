@@ -33,4 +33,6 @@ Example: `zdoc 12 22`
 
 Then add something like:
 
-`0 17 * * * /home/paul/.local/bin/zdoc --config-file /home/paul/.zuliprc 12 22`
+`0 12 * * * /home/paul/.local/bin/zdoc --config-file /home/paul/.zuliprc 12 22`
+
+*runs everyday at noon*
