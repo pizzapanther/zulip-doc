@@ -6,7 +6,7 @@ A small script to check user presence in Zulip. If a user hasn't been around for
 
 `pipx install zulip-doc`
 
-Then setup your `.zuliprc` file:
+Then setup your `.zuliprc` file (for API usage):
 
 ```
 [api]
